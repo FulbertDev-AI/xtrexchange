@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XTREXCHANGE - Convertisseur de devises</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="converter-box">
+            <h1>🪙 XTREXCHANGE 🪙</h1>
+            <div class="converter-form">
+                <div class="input-group">
+                    <label for="amount">Montant 💹</label>
+                    <input type="number" id="amount" placeholder="Entrez votre montant ici : " min="0" step="any">
+                </div>
+                <div class="input-group">
+                    <label for="from-currency">De 👇🏽</label>
+                    <select id="from-currency">
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="USD">USD - Dollar américain</option>
+                        <option value="GBP">GBP - Livre sterling</option>
+                        <option value="CHF">CHF - Franc suisse</option>
+                        <option value="JPY">JPY - Yen japonais</option>
+                        <option value="CAD">CAD - Dollar canadien</option>
+                        <option value="AUD">AUD - Dollar australien</option>
+                        <option value="CNY">CNY - Yuan chinois</option>
+                        <option value="INR">INR - Roupie indienne</option>
+                        <option value="RUB">RUB - Rouble russe</option>
+                        <option value="BRL">BRL - Réal brésilien</option>
+                        <option value="ZAR">ZAR - Rand sud-africain</option>
+                        <option value="XOF">XOF - Franc CFA BCEAO</option>
+                        <option value="XAF">XAF - Franc CFA BEAC</option>
+                        <option value="MAD">MAD - Dirham marocain</option>
+                        <option value="TND">TND - Dinar tunisien</option>
+                        <option value="DZD">DZD - Dinar algérien</option>
+                        <option value="TRY">TRY - Livre turque</option>
+                        <option value="KRW">KRW - Won sud-coréen</option>
+                        <option value="SGD">SGD - Dollar de Singapour</option>
+                        <option value="MXN">MXN - Peso mexicain</option>
+                        <option value="SAR">SAR - Riyal saoudien</option>
+                        <option value="AED">AED - Dirham des Émirats</option>
+                        <option value="SEK">SEK - Couronne suédoise</option>
+                        <option value="NOK">NOK - Couronne norvégienne</option>
+                        <option value="DKK">DKK - Couronne danoise</option>
+                        <option value="PLN">PLN - Zloty polonais</option>
+                        <option value="HKD">HKD - Dollar de Hong Kong</option>
+                        <option value="NZD">NZD - Dollar néo-zélandais</option>
+                        <option value="EGP">EGP - Livre égyptienne</option>
+                        <option value="ILS">ILS - Shekel israélien</option>
+                        <option value="THB">THB - Baht thaïlandais</option>
+                        <option value="NGN">NGN - Naira nigérian</option>
+                        <option value="GHS">GHS - Cedi ghanéen</option>
+                        <option value="KES">KES - Shilling kényan</option>
+                        <option value="UAH">UAH - Hryvnia ukrainienne</option>
+                        <option value="PKR">PKR - Roupie pakistanaise</option>
+                        <option value="BDT">BDT - Taka bangladais</option>
+                        <option value="CLP">CLP - Peso chilien</option>
+                        <option value="COP">COP - Peso colombien</option>
+                        <option value="ARS">ARS - Peso argentin</option>
+                        <option value="IDR">IDR - Roupie indonésienne</option>
+                        <option value="MYR">MYR - Ringgit malaisien</option>
+                        <option value="PHP">PHP - Peso philippin</option>
+                        <option value="CZK">CZK - Couronne tchèque</option>
+                        <option value="HUF">HUF - Forint hongrois</option>
+                        <option value="RON">RON - Leu roumain</option>
+                        <option value="BGN">BGN - Lev bulgare</option>
+                        <option value="HRK">HRK - Kuna croate</option>
+                        <option value="RSD">RSD - Dinar serbe</option>
+                        <option value="ISK">ISK - Couronne islandaise</option>
+                        <option value="LKR">LKR - Roupie sri-lankaise</option>
+                        <option value="VND">VND - Dong vietnamien</option>
+                        <option value="TWD">TWD - Nouveau dollar taïwanais</option>
+                        <option value="SAR">SAR - Riyal saoudien</option>
+                        <option value="QAR">QAR - Riyal qatari</option>
+                        <option value="KWD">KWD - Dinar koweïtien</option>
+                        <option value="OMR">OMR - Rial omanais</option>
+                        <option value="JOD">JOD - Dinar jordanien</option>
+                        <option value="BHD">BHD - Dinar bahreïni</option>
+                        <option value="LBP">LBP - Livre libanaise</option>
+                        <option value="SDG">SDG - Livre soudanaise</option>
+                        <option value="ETB">ETB - Birr éthiopien</option>
+                        <option value="TZS">TZS - Shilling tanzanien</option>
+                        <option value="UGX">UGX - Shilling ougandais</option>
+                        <option value="MGA">MGA - Ariary malgache</option>
+                        <option value="MUR">MUR - Roupie mauricienne</option>
+                        <option value="SCR">SCR - Roupie seychelloise</option>
+                        <option value="MWK">MWK - Kwacha malawite</option>
+                        <option value="ZMW">ZMW - Kwacha zambien</option>
+                        <option value="BWP">BWP - Pula botswanais</option>
+                        <option value="SZL">SZL - Lilangeni swazi</option>
+                        <option value="LSL">LSL - Loti lesothan</option>
+                        <option value="NAD">NAD - Dollar namibien</option>
+                        <option value="BIF">BIF - Franc burundais</option>
+                        <option value="CDF">CDF - Franc congolais</option>
+                        <option value="GNF">GNF - Franc guinéen</option>
+                        <option value="SLL">SLL - Leone sierra-léonais</option>
+                        <option value="GMD">GMD - Dalasi gambien</option>
+                        <option value="MZN">MZN - Metical mozambicain</option>
+                        <option value="AOA">AOA - Kwanza angolais</option>
+                        <option value="SOS">SOS - Shilling somalien</option>
+                        <option value="XPF">XPF - Franc CFP</option>
+                        <option value="XCD">XCD - Dollar des Caraïbes orientales</option>
+                        <option value="BSD">BSD - Dollar bahaméen</option>
+                        <option value="BBD">BBD - Dollar barbadien</option>
+                        <option value="JMD">JMD - Dollar jamaïcain</option>
+                        <option value="TTD">TTD - Dollar de Trinité-et-Tobago</option>
+                        <option value="DOP">DOP - Peso dominicain</option>
+                        <option value="HTG">HTG - Gourde haïtienne</option>
+                        <option value="SRD">SRD - Dollar surinamien</option>
+                        <option value="PEN">PEN - Sol péruvien</option>
+                        <option value="BOB">BOB - Boliviano bolivien</option>
+                        <option value="PYG">PYG - Guarani paraguayen</option>
+                        <option value="UYU">UYU - Peso uruguayen</option>
+                        <option value="VEF">VEF - Bolívar vénézuélien</option>
+                        <option value="GTQ">GTQ - Quetzal guatémaltèque</option>
+                        <option value="HNL">HNL - Lempira hondurien</option>
+                        <option value="NIO">NIO - Córdoba nicaraguayen</option>
+                        <option value="CRC">CRC - Colón costaricien</option>
+                        <option value="SVC">SVC - Colón salvadorien</option>
+                        <option value="BZD">BZD - Dollar bélizien</option>
+                        <option value="JMD">JMD - Dollar jamaïcain</option>
+                        <option value="KYD">KYD - Dollar des îles Caïmans</option>
+                        <option value="ANG">ANG - Florin antillais néerlandais</option>
+                        <option value="AWG">AWG - Florin arubais</option>
+                        <option value="TTD">TTD - Dollar de Trinité-et-Tobago</option>
+                        <option value="XAG">XAG - Argent (once troy)</option>
+                        <option value="XAU">XAU - Or (once troy)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="to-currency">Vers 👇🏽</label>
+                    <select id="to-currency">
+                    </select>
+                </div>
+            </div>
+            <button type="button" onclick="convertCurrency()">Convertir 💱</button>
+            <div class="result" id="result">
+                Le résultat s'affichera ici
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
