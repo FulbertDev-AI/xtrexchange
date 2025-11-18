@@ -4,97 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XTREXCHANGE - Convertisseur de devises</title>
-    <style>
-        body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1d8aa5 0%, #aebabd 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-        .container {
-            width: 100%;
-            max-width: 500px;
-            margin: 0px auto;
-        }
-        .converter-box {
-            background: rgba(250, 250, 250, 0.95);
-            border-radius: 18px;
-            box-shadow: 0 8px px 0 rgba(134, 35, 35, 0.18);
-            padding: 40px 30px 30px 30px;
-            backdrop-filter: blur(4px);
-        }
-        h1 {
-            text-align: center;
-            color: #e21f19;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-        .converter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .input-group {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            font-weight: 700;
-            color: #e70d0d;
-            margin-bottom: 6px;
-            font-size: 20px;
-        }
-        select, input {
-            padding: 12px;
-            border: 1.5px solid #1d8aa5;
-            border-radius: 7px;
-            font-size: 16px;
-            background: #f7fbff;
-            transition: border 0.2s;
-        }
-        select:focus, input:focus {
-            border-color: #f32f21;
-            outline: none;
-        }
-        button {
-            background: linear-gradient(90deg, #50a5eb 0%, #0b5768 100%);
-            color: white;
-            padding: 14px 0;
-            border: none;
-            border-radius: 7px;
-            font-size: 17px;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 10px;
-            box-shadow: 0 2px 8px rgba(242, 245, 49, 0.08);
-            transition: background 0.2s;
-        }
-        button:hover {
-            background: linear-gradient(135deg, #1d8aa5 0%, #aebabd 100%);
-        }
-        .result {
-            margin-top: 25px;
-            padding: 15px;
-            background: linear-gradient(90deg, #e3f2fd 0%, #f1f8e9 100%);
-            border-radius: 7px;
-            text-align: center;
-            font-size: 19px;
-            color: #e21f19;
-            font-weight: 700;
-            min-height: 35px;
-        }
-        @media (max-width: 800px) {
-            .container {
-                max-width: 95vw;
-                padding: 0 5vw;
-            }
-            .converter-box {
-                padding: 25px 10px 20px 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="container">
@@ -231,43 +141,6 @@
             </div>
         </div>
     </div>
-    <script>
-        window.onload = function() {
-            document.getElementById('to-currency').innerHTML = document.getElementById('from-currency').innerHTML;
-        };
-        function convertCurrency() {
-            const amountEl = document.getElementById('amount');
-            const amount = parseFloat(amountEl.value);
-            const fromCurrency = document.getElementById('from-currency').value;
-            const toCurrency = document.getElementById('to-currency').value;
-            const resultEl = document.getElementById('result');
-
-            if (isNaN(amount) || amount < 0) {
-                resultEl.textContent = 'Veuillez entrer un montant valide.';
-                return;
-            }
-            const rates = {
-                'EUR': { 'USD': 1.12, 'GBP': 0.86, 'CHF': 1.08, 'XOF': 655.957, 'XAF': 655.957 },
-                'USD': { 'EUR': 0.89, 'GBP': 0.77, 'CHF': 0.96, 'XOF': 584.98, 'XAF': 584.98 },
-                'GBP': { 'EUR': 1.16, 'USD': 1.30, 'CHF': 1.25, 'XOF': 760.00, 'XAF': 760.00 },
-                'CHF': { 'EUR': 0.93, 'USD': 1.04, 'GBP': 0.80, 'XOF': 610.00, 'XAF': 610.00 },
-                'XOF': { 'EUR': 0.001524, 'USD': 0.00171, 'GBP': 0.00132, 'CHF': 0.00164, 'XAF': 1 },
-                'XAF': { 'EUR': 0.001524, 'USD': 0.00171, 'GBP': 0.00132, 'CHF': 0.00164, 'XOF': 1 }
-            };
-            let result;
-            if (fromCurrency === toCurrency) {
-                result = amount;
-            } else {
-                const rate = rates[fromCurrency] && rates[fromCurrency][toCurrency];
-                if (!rate) {
-                    resultEl.textContent = 'Taux de change non disponible pour cette paire pour le moment.';
-                    return;
-                }
-                result = amount * rate;
-            }
-
-            resultEl.textContent = `${amount} ${fromCurrency} = ${result.toLocaleString('fr-FR', {maximumFractionDigits: 2})} ${toCurrency}`;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
